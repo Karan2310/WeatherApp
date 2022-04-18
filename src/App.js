@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import LeftScreen from './Screen/LeftScreen/LeftScreen';
 import RightScreen from './Screen/RightScreen/RightScreen';
+import Loading from './Screen/Loading/Loading';
 import axios from 'axios';
 import { API_KEY } from './Constants';
 
@@ -63,8 +64,8 @@ function App() {
 
   return (
     <div className="App" >
-      <div className="container-fluid">
-        {isLoading === true ? "isLoading" :
+      {isLoading === true ? <Loading /> :
+        <div className="container-fluid">
           <div className="row d-flex flex-column-reverse flex-md-row ">
             <div className="col-md-7 col-lg-9 p-0 ">
               <LeftScreen cityInfo={cityInfo} handleInputChange={handleInputChange} handleSearchCity={handleSearchCity} input={input} />
@@ -74,8 +75,8 @@ function App() {
                 <RightScreen cityInfo={cityInfo} handleInputChange={handleInputChange} handleSearchCity={handleSearchCity} input={input} /></div>
             </div>
           </div>
-        }
-      </div>
+        </div>
+      }
     </div>
   );
 }

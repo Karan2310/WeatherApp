@@ -36,8 +36,8 @@ const Chart = ({ hourlyTemp }) => {
 
     };
     return (
-        <div className="container mb-lg-3 mt-4 mt-lg-2" >
-            <h2>Hourly Weather</h2>
+        <div className="container mb-lg-3 mt-5 mt-lg-2" >
+            <h3>Hourly Weather</h3>
             <Line data={data} style={{ maxHeight: "22rem" }} />
         </div>
     )
