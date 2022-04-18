@@ -3,7 +3,7 @@
   min-height: 100vh;
 }
 
-.left #searchPlace {
+#searchPlace {
   background-color: #fff;
   border: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.102);
@@ -13,10 +13,15 @@
   border-radius: 0.8rem;
 }
 
-.left #searchPlace input {
+#searchPlace input {
   border: 0;
   outline: none;
   width: 100%;
   color: rgb(0, 0, 0);
   font-weight: 500;
+}
+
+.left .weekly-list {
+  font-size: 1.1rem;
+  color: rgb(49, 49, 49);
 }

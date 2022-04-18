@@ -6,7 +6,7 @@ import axios from 'axios';
 import { API_KEY } from './Constants';
 
 function App() {
-  const [input, setInput] = useState("Thane")
+  const [input, setInput] = useState("Airoli")
   const [cityInfo, setCityInfo] = useState([])
   const [isLoading, setisLoading] = useState(true)
 
@@ -26,6 +26,9 @@ function App() {
         let result = res.data[0]
         const cityResult = { name: result.name, country: result.country, state: result.state, lon: result.lon, lat: result.lat }
         getWeatherData(cityResult)
+      }).catch((err) => {
+        alert("No such city found")
+        setisLoading(false)
       })
   }
 
@@ -38,6 +41,10 @@ function App() {
         setCityInfo({ ...cityInfo, cityResult, weatherInfo: res.data })
         console.log(cityInfo);
         setInput("")
+        setisLoading(false)
+      })
+      .catch((err) => {
+        alert(err)
         setisLoading(false)
       })
   }
@@ -59,11 +66,13 @@ function App() {
       <div className="container-fluid">
         {isLoading === true ? "isLoading" :
           <div className="row d-flex flex-column-reverse flex-md-row ">
-            <div className="col-md-7 col-lg-9 p-0">
-              <LeftScreen handleInputChange={handleInputChange} handleSearchCity={handleSearchCity} input={input} />
+            <div className="col-md-7 col-lg-9 p-0 ">
+              <LeftScreen cityInfo={cityInfo} handleInputChange={handleInputChange} handleSearchCity={handleSearchCity} input={input} />
             </div>
-            <div className="col-md-5 col-lg-3 p-0">
-              <RightScreen cityInfo={cityInfo} /></div>
+            <div className="col-md-5 col-lg-3 p-0 ">
+              <div className="affix">
+                <RightScreen cityInfo={cityInfo} handleInputChange={handleInputChange} handleSearchCity={handleSearchCity} input={input} /></div>
+            </div>
           </div>
         }
       </div>

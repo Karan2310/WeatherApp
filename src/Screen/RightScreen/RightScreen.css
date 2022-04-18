@@ -48,3 +48,14 @@
 .right .top .extra-info p {
   color: rgb(182, 182, 182);
 }
+
+@media (min-width: 996px) {
+  .right {
+    position: fixed;
+    width: 25%;
+  }
+  .left {
+    float: left;
+    width: 100%;
+  }
+}
