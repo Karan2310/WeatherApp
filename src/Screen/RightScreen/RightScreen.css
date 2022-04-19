@@ -1,0 +1,61 @@
+.right {
+  background-color: var(--darkblue);
+  min-height: 100vh;
+  color: #fff;
+}
+
+.right .top i {
+  color: rgb(197, 218, 255);
+  font-size: 1.4rem;
+}
+
+.right .top #today {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.right .top #today-date {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.right .top #curTemp {
+  font-size: 6rem;
+  text-align: center;
+  font-weight: 200 !important;
+}
+
+.right .top #deg {
+  font-size: 1.5rem;
+}
+
+.right .top #curLocation {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
+  color: rgb(149, 149, 149);
+  letter-spacing: 1px;
+}
+
+.right .top #feel {
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgb(149, 149, 149);
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+.right .top .extra-info p {
+  color: rgb(182, 182, 182);
+}
+
+@media (min-width: 996px) {
+  .right {
+    position: fixed;
+    width: 25%;
+  }
+  .left {
+    float: left;
+    width: 100%;
+  }
+}
